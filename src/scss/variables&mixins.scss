@@ -20,11 +20,23 @@ $black: black;
 
 $maxWidth: 1160px;
 
+$imgBottomM: 40px;
+
+$padding: 10px;
 
 
 
 
 
+//  ////////////////////////////////////////////////////////////////
+//  === MediaSizes ===   === MediaSizes ===   === MediaSizes === 
+//  === MediaSizes ===   === MediaSizes ===   === MediaSizes === 
+//  ////////////////////////////////////////////////////////////////
+
+
+$mobileWidth: 650px;
+
+$desktopWidth: $maxWidth;
 
 
 
@@ -35,3 +47,8 @@ $maxWidth: 1160px;
 //  === MIXINS ===   === MIXINS ===   === MIXINS === 
 //  === MIXINS ===   === MIXINS ===   === MIXINS === 
 //  ////////////////////////////////////////////////////////////////
+
+
+@mixin animate{
+    transition: 0.5s all;
+}

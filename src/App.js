@@ -7,7 +7,8 @@ import { Route, Switch } from 'react-router-dom';
 import Layout from './components/Layout/Layout'
 import Projects from './components/Projects/Projects'
 import ContactPage from './components/ContactPage/ContactPage';
-import SingleProject from './components/SingleProject/SingleProject'
+import SingleProject from './components/SingleProject/SingleProject';
+import Loader from './components/UI/Loader/Loader';
 
 class App extends Component {
 
@@ -64,11 +65,6 @@ class App extends Component {
             src: element.acf[el].sizes['custom-feature-image']
           }
         })
-      //   .map(el => {
-      //     return acfKeys.findIndex(curKey => {
-      //       return curKey === el;
-      //     })
-      // })
 
       let images = acfKeys.filter(el => {
           return el.includes('image_')
@@ -77,8 +73,10 @@ class App extends Component {
         .map(el => {
           return {
             name: element.acf[el].title,
-            src: element.acf[el].sizes['custom-feature-image'],
+            src: element.acf[el].sizes['full-size'],
             alt: element.acf.title_EN,
+            width: element.acf[el].sizes['full-size-width'],
+            height: element.acf[el].sizes['full-size-height']
           }
         })
 
@@ -99,7 +97,21 @@ class App extends Component {
     })
     return data
   }
+
+
+
   
+  loaderState = () => {
+    console.log('loader state')
+    if (this.state.posts.length > 0) {
+      console.log('loader opacity 0');
+      
+      return 0
+    } else {
+      console.log('loader 1')
+      return 1;
+    }
+  }
   
   
   
@@ -132,13 +144,16 @@ class App extends Component {
         }
     }
 
-   
 
 
-
+    //// //// ////
+    ////  RETURN 
+    ////
+    
     return (
       <div className="App">
         <Layout>
+          <Loader opacity={this.loaderState()}/>
           <div>
             <Switch>
                 <Route path='/contact/' component={ContactPage}/>

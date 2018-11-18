@@ -1,7 +1,11 @@
 import React from 'react';
+import './SingleProject.scss';
+
+import ProjectImage from './ProjectImage/ProjectImage';
 
 const singleProject = (props) => {
 
+    window.scrollTo(0, 0);
 
     //// //// ////
     ////  PREPARE SINGLE PROJECT CONTENT 
@@ -16,12 +20,49 @@ const singleProject = (props) => {
             });
 
             console.log('postIndex = ', postIndex);
-            
-            return <p>{props.posts[postIndex].title}</p>
+            const post = props.posts[postIndex];
+
+            //Last images
+            var images = [];
+            for (var i=2; i<post.images.length; i++){  
+                images.push(<ProjectImage key={i} image={post.images[i]}/> )         
+            }
 
 
+            //Colaboration
+            var description = (type) => {
+                if (post[type] !== ""){
+                    return (
+                        <>
+                            <p>{type}:</p>
+                            <span dangerouslySetInnerHTML={{__html: 
+        post[type]}}></span>
+                        </>
+                    )
+                } else {
+                    return null;
+                }
+            }
+
+
+            return (
+                <div className='singleProject'>
+                    <ProjectImage image={post.images[0]}/>
+                    <div className='projectDescriptionContainer'>
+                        <div className='projectDescription'>
+                            <h1>{post.title}</h1>
+                            {description('colaboration')}
+                            {description('description')}
+
+                        </div>
+                        <ProjectImage image={post.images[1]}/>
+                    </div>
+
+                    {images}
+                </div>
+            )
         } else {
-            return <p>///</p>
+            return <p>\\\</p>
         }
     }
     
@@ -32,10 +73,10 @@ const singleProject = (props) => {
     
 
     return (
-        <div>this is some single project of: the 
-        {projectContent()}
-  
-        </div>
+        <>
+            {projectContent()}
+        </>
+
     )
 };
 

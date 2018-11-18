@@ -1,0 +1,42 @@
+@import '../../scss/variables&mixins.scss';
+
+
+.singleProject{
+
+
+        .projectDescriptionContainer{
+            display: flex;
+            flex-direction: row-reverse;
+            text-align: right;
+
+            .projectDescription {
+                max-width: 30%;
+                padding-left: 50px;
+            }
+        }
+}
+
+
+
+@media screen and (max-width: $desktopWidth){
+    .projectDescription{
+        padding-right: $padding;
+    }
+}
+
+@media screen and (max-width: $mobileWidth){
+
+    .singleProject{
+
+        .projectDescriptionContainer{
+
+            flex-direction: column;
+            
+            .projectDescription {
+                max-width: 100%;
+                padding-bottom: 40px;
+            }
+        }
+   
+    }
+}

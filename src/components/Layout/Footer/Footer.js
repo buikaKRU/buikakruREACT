@@ -1,4 +1,7 @@
 import React from 'react';
+import './Footer.scss';
+
+import logo from '../../../assets/images/buikakruslash.png';
 
 
 const footer = () => {
@@ -11,14 +14,14 @@ const footer = () => {
             </div>
 
             <div className="footerContainer">
-                <ul id="socialNet">
+                <ul className="social">
                     <li>
                         <a href="https://pinterest.com/buikakru/">\\ pinterest</a>
                     </li>
                 </ul>
             </div>
 
-            <img src="images/buikakruslash.png" alt="buikaKRU slash logo" width="auto" height="80"></img>
+            <img src={logo} alt="buikaKRU slash logo" width="auto" height="80"></img>
         </footer>
     );
 }

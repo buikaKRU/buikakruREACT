@@ -1,0 +1,34 @@
+@import '../../../scss/variables&mixins.scss';
+
+.loader{
+    position: fixed;
+    background: white;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+
+    .slashes{
+        position: absolute;
+        top: 50%;
+        margin: auto;
+        text-align: center;
+        width: 100%;
+
+        .span1{
+            position: absolute;
+            left: 50%;
+            animation-name: animate;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+
+    }
+}
+
+
+@keyframes animate {
+    from {transform: translateX(-1px)}
+    to {transform: translateX(10px)}
+}

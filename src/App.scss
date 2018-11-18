@@ -7,6 +7,27 @@
 //  === GLOBAL SCSS ===   === GLOBAL SCSS ===   === GLOBAL SCSS === 
 //  ////////////////////////////////////////////////////////////////
 
+.App{
+  position: relative;
+  min-height: 100vh;
+
+  
+}
+
+
+body{
+ 
+  *{
+    //font-weight: 100;
+    @include animate;
+
+  }
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+}
 
 li{
   list-style: none;
@@ -16,4 +37,8 @@ li{
 a {
   color: $black;
   text-decoration: none;
+}
+
+h1{
+  font-size: 20px;
 }
