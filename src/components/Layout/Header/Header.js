@@ -1,14 +1,30 @@
-import React from 'react'
+import React from 'react';
+import {NavLink} from 'react-router-dom'
+import classes from './Header.module.scss';
 
 
-import NavItem from './NavItem/NavItem'
+import logo from '../../../assets/images/buikakruslash.png'
+
+
 
 const header = (props) => {
     return(
-        <header>
+        <header className={classes.Header}>
+            
+            <img className={classes.Logo} src={logo}/>
+
             <nav>
-                <NavItem item={'contact'}/>
-                <NavItem item={'projects'}/>
+                <ul>
+                    <li>
+                        <NavLink to="/contact/">contact</NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink to="/">projects</NavLink>
+                    </li>
+                    
+                </ul>
+                
             </nav>
         </header>
         

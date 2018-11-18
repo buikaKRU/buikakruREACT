@@ -1,0 +1,61 @@
+@import '../../../scss/variables&mixins.scss';
+
+
+.Header{
+    max-width: $maxWidth;
+    margin: 0 auto;
+    background-color: $white;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    z-index: 100;
+
+    nav{
+        //display: inline-block;
+        li {
+            float: right;
+            width: 120px;
+            padding-left: 40px;
+            overflow: hidden;
+            margin-left: 10px;
+            text-align: right;
+    
+            a{
+                &:before{
+                    content: '/';
+                    position: relative;
+                    right: 10px;
+    
+                }
+    
+                &:hover{
+                    &:before{
+                        content: '/ / /';
+                        position: relative;
+                        right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    
+}
+
+
+.Logo{
+
+    width: 30px;
+    height: 60px;
+    position: absolute;
+    top: 10px;
+
+}
+
+
+@media (max-width: $maxWidth){
+    .Header li {
+        padding-right: 10px;
+    }
+}

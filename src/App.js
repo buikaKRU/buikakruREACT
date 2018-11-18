@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import './App.scss';
-import axios from './axiosGet'
+import axios from './axiosGet';
+import { Route, Switch } from 'react-router-dom';
 
 
 import Layout from './components/Layout/Layout'
+import Projects from './components/Projects/Projects'
+import ContactPage from './components/ContactPage/ContactPage';
+import SingleProject from './components/SingleProject/SingleProject'
 
 class App extends Component {
 
@@ -14,22 +18,7 @@ class App extends Component {
   //  ////////////////////////////////////////////////////////////////
 
   state = {
-    posts: [
-        {
-          id: 1,
-          date: 2018,
-          titleEN: 'test name',
-          descriptionEN: 'test description',
-          colaborationEN: 'colaboration',
-          featureImages: [
-            {
-              name: 'image-name',
-              src: 'sr path'
-            },
-          ],
-          images: [],
-        }
-    ],
+    posts: [],
     selectedPost: null,
   }
   
@@ -93,13 +82,15 @@ class App extends Component {
           }
         })
 
+  
+
       const post = {
         id: element.id,
         date: element.date,
-        titleEN: element.acf.title_EN,
-        descriptionEN: element.acf.description_EN,
-        colaborationEN:element.acf.colaboration_EN,
-        keys: acfKeys,
+        title: element.acf.title_EN,
+        titleID: element.acf.title_EN.replace(/\s+/g, '_'),
+        description: element.acf.description_EN,
+        colaboration:element.acf.colaboration_EN,
         featureImages: featureImages,
         images: images,
       }
@@ -124,13 +115,36 @@ class App extends Component {
   
   render() {
 
-    let content = (<div>Children - web content</div>)
+    //// //// ////
+    ////  PREPARE RPOJECTS
+    ////
+   
+    const projects = () => {
+        if (this.state.posts.length > 0){
+          return (
+            <Projects 
+            posts={this.state.posts}
+            />
+      
+          )
+        } else {
+          return <div>loading</div>
+        }
+    }
+
+   
+
+
 
     return (
       <div className="App">
         <Layout>
           <div>
-            {content}
+            <Switch>
+                <Route path='/contact/' component={ContactPage}/>
+                <Route path='/:id' render={(props) => <SingleProject {...props} posts={this.state.posts} />}/>
+                <Route render={projects}/>
+            </Switch>
           </div>
         </Layout>
       </div>
