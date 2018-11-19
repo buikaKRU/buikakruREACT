@@ -2,7 +2,9 @@
 
 
 .Header{
-    max-width: $maxWidth;
+
+   
+   
     margin: 0 auto;
     background-color: $white;
     position: fixed;
@@ -10,34 +12,41 @@
     width: 100%;
     z-index: 100;
 
-    nav{
-        //display: inline-block;
-        li {
-            float: right;
-            width: 120px;
-            padding-left: 40px;
-            overflow: hidden;
-            margin-left: 10px;
-            text-align: right;
-    
-            a{
-                &:before{
-                    content: '/';
-                    position: relative;
-                    right: 10px;
-    
-                }
-    
-                &:hover{
+    div{
+        max-width: $maxWidth;
+        margin: auto;
+
+        nav{
+            //display: inline-block;
+            li {
+                float: right;
+                width: 120px;
+                padding-left: 40px;
+                overflow: hidden;
+                margin-left: 10px;
+                text-align: right;
+        
+                a{
                     &:before{
-                        content: '/ / /';
+                        content: '/';
                         position: relative;
                         right: 10px;
+        
+                    }
+        
+                    &:hover{
+                        &:before{
+                            content: '/ / /';
+                            position: relative;
+                            right: 10px;
+                        }
                     }
                 }
             }
-        }
+        } 
     }
+
+
 
 
     
@@ -57,5 +66,19 @@
 @media (max-width: $maxWidth){
     .Header li {
         padding-right: 10px;
+    }
+}
+
+@media screen and (max-width: $mobileWidth){
+    .Header{
+        div{
+            nav{
+                li{
+                    width: 100px;
+                    padding-left: 5px;
+                }
+            }
+        }
+      
     }
 }

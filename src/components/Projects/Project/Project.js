@@ -8,6 +8,9 @@ const project = (props) => {
     
     const style1 = {backgroundImage: 'url("'+props.featureImages[1].src+'")'}
     const style2 = {backgroundImage: 'url("'+props.featureImages[0].src+'")'}
+
+
+
     
     
     return (
@@ -16,7 +19,7 @@ const project = (props) => {
             <NavLink to={props.title}>
                 <div style={style1}>
                 
-                    <div className="inner" style={style2}>
+                    <div className="inner" onLoad={console.log('done')} style={style2}>
                     
                     </div>
                 </div>

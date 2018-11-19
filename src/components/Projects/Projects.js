@@ -7,6 +7,7 @@ import Project from './Project/Project'
 const projects = (props) => {
 
     window.scrollTo(0, 0);
+    props.title('buikaKRU: projects')
 
     const projects = props.posts.map(project => {
         return (

@@ -7,6 +7,13 @@ const singleProject = (props) => {
 
     window.scrollTo(0, 0);
 
+    const imageLoaded = (img) =>{
+        console.log('IMAGELOADED:img = ', img);
+        
+    }
+
+    
+
     //// //// ////
     ////  PREPARE SINGLE PROJECT CONTENT 
     ////
@@ -21,6 +28,7 @@ const singleProject = (props) => {
 
             console.log('postIndex = ', postIndex);
             const post = props.posts[postIndex];
+            props.title(`buikaKRU: ${post.title}`);
 
             //Last images
             var images = [];
@@ -35,8 +43,7 @@ const singleProject = (props) => {
                     return (
                         <>
                             <p>{type}:</p>
-                            <span dangerouslySetInnerHTML={{__html: 
-        post[type]}}></span>
+                            <span dangerouslySetInnerHTML={{__html: post[type]}}></span>
                         </>
                     )
                 } else {

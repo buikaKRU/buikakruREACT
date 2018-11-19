@@ -10,22 +10,23 @@ import logo from '../../../assets/images/buikakruslash.png';
 const header = (props) => {
     return(
         <header className={classes.Header}>
-            
-            <img className={classes.Logo} src={logo} alt="logo"/>
+            <div>
+                <img className={classes.Logo} src={logo} alt="logo"/>
 
-            <nav>
-                <ul>
-                    <li>
-                        <NavLink to="/contact/">contact</NavLink>
-                    </li>
+                <nav>
+                    <ul>
+                        <li>
+                            <NavLink to="/contact/">contact</NavLink>
+                        </li>
 
-                    <li>
-                        <NavLink to="/">projects</NavLink>
-                    </li>
+                        <li>
+                            <NavLink to="/">projects</NavLink>
+                        </li>
+                        
+                    </ul>
                     
-                </ul>
-                
-            </nav>
+                </nav>
+            </div>
         </header>
         
     )

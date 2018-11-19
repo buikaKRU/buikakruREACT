@@ -6,15 +6,13 @@ const loader = (props) => {
 
     let slashes = '///'
 
- 
-    
    
     const visibility = () =>{
         if (props.opacity === 1){
             return 100;
         } else {
            
-            return -1
+            return -1;
         }
     }
     const style = {
@@ -26,7 +24,11 @@ const loader = (props) => {
     return (
     <div className="loader" style={style}>
         <div className="slashes">
-            <p>/<span className="span1">/<span className='span1'>/</span></span></p>
+            <p>
+                <span className="span1">/</span>
+                <span className="span2">/</span>
+                <span className="span3">/</span>
+            </p>
         </div>
     </div>
     )

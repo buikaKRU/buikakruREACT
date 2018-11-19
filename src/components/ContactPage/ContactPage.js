@@ -1,6 +1,12 @@
 import React from 'react'
 
-const contactPage = () => {
+const contactPage = (props) => {
+
+    window.scrollTo(0, 0);
+    props.title('buikaKRU: contact')
+
+    
+
     return(
         <div>
             <img src="images/buikakrulogo.svg"/>

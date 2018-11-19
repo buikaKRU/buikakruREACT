@@ -5,28 +5,33 @@ footer{
     position: absolute;
     bottom: 0;
     width: 100%;
-    max-width: $maxWidth;
-    margin: auto;
     padding: 0;
     padding-top: 100px;
     padding-bottom: 20px;
-    display: flex;
-    flex-direction: row;
+  
 
-    .footerContainer{
+    .mainFooter{
+        max-width: $maxWidth;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
 
-        margin: 0;
-        flex-grow: 1;
-        text-align: left;
-        padding: 0 $padding;
+        .footerContainer{
 
-        .social{
-            float: right;
+            margin: 0;
+            flex-grow: 1;
+            text-align: left;
+            padding: 0 $padding;
+    
+            .social{
+                float: right;
+            }
+        }
+    
+        img{
+            position: absolute;
+            left: calc(50% - 15px);
         }
     }
 
-    img{
-        position: absolute;
-        left: calc(50% - 15px);
-    }
 }

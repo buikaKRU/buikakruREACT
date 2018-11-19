@@ -29,6 +29,11 @@ class App extends Component {
   //  ////////////////////////////////////////////////////////////////
   
   componentDidMount(){
+
+    
+
+    
+
     axios.get('')
       .then( response => {
         console.log('response = ', response.data);
@@ -102,15 +107,18 @@ class App extends Component {
 
   
   loaderState = () => {
-    console.log('loader state')
     if (this.state.posts.length > 0) {
-      console.log('loader opacity 0');
-      
+
       return 0
     } else {
-      console.log('loader 1')
+
       return 1;
     }
+  }
+
+
+  changeTitleHandler = (newTitle) => {
+    document.title = newTitle;
   }
   
   
@@ -136,6 +144,7 @@ class App extends Component {
           return (
             <Projects 
             posts={this.state.posts}
+            title={this.changeTitleHandler}
             />
       
           )
@@ -144,7 +153,7 @@ class App extends Component {
         }
     }
 
-
+    
 
     //// //// ////
     ////  RETURN 
@@ -156,8 +165,8 @@ class App extends Component {
           <Loader opacity={this.loaderState()}/>
           <div>
             <Switch>
-                <Route path='/contact/' component={ContactPage}/>
-                <Route path='/:id' render={(props) => <SingleProject {...props} posts={this.state.posts} />}/>
+                <Route path='/contact/' render={(props) => <ContactPage {...props} title={this.changeTitleHandler}/>}/>
+                <Route path='/:id' render={(props) => <SingleProject {...props} posts={this.state.posts} title={this.changeTitleHandler}/>}/>
                 <Route render={projects}/>
             </Switch>
           </div>
