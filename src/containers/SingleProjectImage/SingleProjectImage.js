@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import './ProjectImage.scss';
+import './SingleProjectImage.scss';
 
-class projectImage extends Component {
+class singleProjectImage extends Component {
 
     state = {
         imageStatus: 'loading...',
-        test: 'blablbblalal',
     }
 
 
@@ -40,4 +39,4 @@ class projectImage extends Component {
    
 }
 
-export default projectImage;
+export default singleProjectImage;

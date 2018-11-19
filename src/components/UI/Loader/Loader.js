@@ -2,10 +2,6 @@ import React from 'react';
 import './Loader.scss';
 
 const loader = (props) => {
-
-
-    let slashes = '///'
-
    
     const visibility = () =>{
         if (props.opacity === 1){

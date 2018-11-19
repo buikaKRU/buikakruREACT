@@ -4,16 +4,26 @@
 .singleProject{
 
 
-        .projectDescriptionContainer{
-            display: flex;
-            flex-direction: row-reverse;
-            text-align: right;
+    .projectDescriptionContainer{
+        display: flex;
+        flex-direction: row-reverse;
+        text-align: right;
 
-            .projectDescription {
-                max-width: 30%;
-                padding-left: 50px;
-            }
+        .projectDescription {
+            max-width: 30%;
+            padding-left: 50px;
         }
+    }
+ 
+}
+
+
+.postNavigation{
+    width: 100%;
+
+    a.nextButton{
+        float: right;
+    }
 }
 
 
@@ -21,6 +31,35 @@
 @media screen and (max-width: $desktopWidth){
     .projectDescription{
         padding-right: $padding;
+    }
+
+    .postNavigation{
+
+        .postNavigationCaption{
+            opacity: 0;
+        }
+
+        a{
+            span{
+                padding: 10px 0;
+                display: inline-block;
+            }
+            &:hover{
+                .postNavigationCaption{
+                    opacity: 1;
+                } 
+            }
+        }
+
+        .nextButton{
+            padding-right: $padding;
+        }
+
+        .prevButton{
+            padding-left: $padding;
+        }
+
+       
     }
 }
 

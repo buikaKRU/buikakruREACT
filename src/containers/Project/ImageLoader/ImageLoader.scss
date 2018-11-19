@@ -1,0 +1,65 @@
+@import '../../../scss/variables&mixins.scss';
+
+.imageLoader{
+    position: absolute;
+    //background: $white;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    z-index: 100;
+
+    .slashes{
+        position: absolute;
+        top: 50%;
+        margin: auto;
+        text-align: center;
+        width: 100%;
+        transform: translateY(-50%);
+
+        *{
+            transition: none;
+        }
+
+        span{
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        .span1{
+            animation-name: animate1;
+            
+        }
+
+        .span2{
+            animation-name: animate2;
+        }
+
+        .span3{
+            animation-name: animate3;
+        }
+
+
+    }
+}
+
+
+@keyframes animate1 {
+    0% {opacity: 0}
+    24% {opacity: 0;}
+    25% {opacity: 1}
+}
+
+@keyframes animate2 {
+    0% {opacity: 0;}
+    49% {opacity: 0;}
+    50% {opacity: 1;}
+}
+
+@keyframes animate3 {
+    0% {opacity: 0;}
+    74% {opacity: 0;}
+    75% {opacity: 1;}
+}

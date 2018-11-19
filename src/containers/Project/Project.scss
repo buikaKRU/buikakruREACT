@@ -1,13 +1,16 @@
-@import '../../../scss/variables&mixins.scss';
+@import '../../scss/variables&mixins.scss';
 
 .Project {
     display: inline-block;
     margin-bottom: 40px;
     width: calc(50% - 20px);
+    position: relative;
     cursor: pointer;
+
     
 
-    div{
+    .outer{
+        position: relative;
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -21,6 +24,20 @@
         &.inner{
             &:hover{
                 opacity: 0;
+            }
+        }
+    }
+
+    img{
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        min-height: 100%;
+        transform: translateY(-50%);
+
+        &.imageToHide{
+            &:hover{
+                opacity: 0!important;
             }
         }
     }

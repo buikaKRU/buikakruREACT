@@ -1,7 +1,7 @@
 import React from 'react';
 import './Projects.scss';
 
-import Project from './Project/Project'
+import Project from '../../containers/Project/Project'
 
 
 const projects = (props) => {
