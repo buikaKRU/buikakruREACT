@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
-import axios from './axiosGet';
+import axios from './gitIgnore/axiosGet';
 import { Route, Switch } from 'react-router-dom';
 
 
@@ -11,6 +11,12 @@ import SingleProject from './components/SingleProject/SingleProject';
 import Loader from './components/UI/Loader/Loader';
 
 class App extends Component {
+//  ////////////////////////////////////////////////////////////////
+//  === THE MAIN APP ===   === THE MAIN APP ===   === THE MAIN APP === 
+//  === THE MAIN APP ===   === THE MAIN APP ===   === THE MAIN APP === 
+//  ////////////////////////////////////////////////////////////////
+
+  
 
 
   //  ////////////////////////////////////////////////////////////////
@@ -29,11 +35,11 @@ class App extends Component {
   //  ////////////////////////////////////////////////////////////////
   
   componentDidMount(){
-
+  
+    //// //// ////
+    ////  GETTIN AND PREPARING API DATA FROM SERVER 
+    ////
     
-
-    
-
     axios.get('')
       .then( response => {
         console.log('response = ', response.data);
@@ -48,13 +54,14 @@ class App extends Component {
       })
   }
 
-
-
-
   //  ////////////////////////////////////////////////////////////////
   //  === METHODS ===   === METHODS ===   === METHODS === 
   //  === METHODS ===   === METHODS ===   === METHODS === 
   //  ////////////////////////////////////////////////////////////////
+  
+  //// //// ////
+  ////  MANAGING DATA FROM API 
+  ////
   
   prepareData = (response) => {
     const data = response.map(element => {
@@ -85,8 +92,10 @@ class App extends Component {
           }
         })
 
-  
-
+      //// //// ////
+      ////  CREATING FINAL POST OBJECT 
+      ////
+      
       const post = {
         id: element.id,
         date: element.date,
@@ -103,27 +112,25 @@ class App extends Component {
     return data
   }
 
-
-
+  //// //// ////
+  ////  MANAGING LOADING SCREEN 
+  ////
   
   loaderState = () => {
     if (this.state.posts.length > 0) {
-
       return 0
     } else {
-
       return 1;
     }
   }
 
-
+  //// //// ////
+  ////  CHANGING META DESCRIPTION 
+  ////
+  
   changeTitleHandler = (newTitle) => {
     document.title = newTitle;
   }
-  
-  
-  
-  
   
   
   
@@ -146,7 +153,6 @@ class App extends Component {
             posts={this.state.posts}
             title={this.changeTitleHandler}
             />
-      
           )
         } else {
           return <div>loading</div>

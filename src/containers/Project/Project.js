@@ -5,7 +5,19 @@ import './Project.scss';
 import ImageLoader from './ImageLoader/ImageLoader'
 
 class project extends Component {
+//// //// ////
+////  PROJECT DISPLAYED UNDER PROJECTS 
+////
+// uses state to display loader until both project thumbnails are onLoad=true
 
+
+
+
+
+//  ////////////////////////////////////////////////////////////////
+//  === STATE ===   === STATE ===   === STATE === 
+//  === STATE ===   === STATE ===   === STATE === 
+//  ////////////////////////////////////////////////////////////////
 
 state = {
     imagesLoaded: 0,
@@ -23,6 +35,13 @@ imageLoaded = ()=>{
 imageOpacity = () => {
     return this.state.imagesLoaded < 2 ? 0 : 1;
 }
+
+
+//  ////////////////////////////////////////////////////////////////
+//  === RENDER ===   === RENDER ===   === RENDER === 
+//  === RENDER ===   === RENDER ===   === RENDER === 
+//  ////////////////////////////////////////////////////////////////
+
     
 render(){
 
@@ -51,8 +70,7 @@ render(){
                     
                 </div>
 
-                
-
+                {/* images loader until both images are onLoad = true */}
                 {imageloader}
 
             </NavLink>

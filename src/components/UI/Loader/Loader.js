@@ -2,6 +2,10 @@ import React from 'react';
 import './Loader.scss';
 
 const loader = (props) => {
+//// //// ////
+////  LOADER UESED IN APP CONTAINER TO DISPLAY LOADING SLASHES UNTIL APP GET API DATA 
+////
+
    
     const visibility = () =>{
         if (props.opacity === 1){

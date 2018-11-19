@@ -8,6 +8,12 @@ import logo from '../../../assets/images/buikakruslash.png';
 
 
 const header = (props) => {
+//// //// ////
+////  DISPLAYS HEADER AN HEADER NAVBAR 
+////
+
+
+
     return(
         <header className={classes.Header}>
             <div>

@@ -3,6 +3,10 @@ import logo from '../../assets/images/buikakrulogo.svg';
 import './ContactPage.scss';
 
 const contactPage = (props) => {
+//// //// ////
+////  CONTACT PAGE SUB-PAGE 
+////
+
 
     window.scrollTo(0, 0);
     props.title('buikaKRU: contact')

@@ -5,6 +5,11 @@ import logo from '../../../assets/images/buikakruslash.png';
 
 
 const footer = () => {
+//// //// ////
+////  DISPLAYS FOOTER 
+////
+
+
     return (
         <footer>
             <div className="mainFooter">

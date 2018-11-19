@@ -2,6 +2,10 @@ import React from 'react';
 import './ImageLoader.scss';
 
 const imageLoader = () => {
+//// //// ////
+////  IMAGE LOADER WITH DASHES USED IN PROJECT CONTAINER 
+////
+
     return (
         <div className="imageLoader">
             <div className="slashes">

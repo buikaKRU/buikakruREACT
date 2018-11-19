@@ -5,11 +5,14 @@ import {NavLink} from 'react-router-dom';
 import SingleProjectImage from '../../containers/SingleProjectImage/SingleProjectImage';
 
 const singleProject = (props) => {
+//// //// ////
+////  SUB-PAGE FOR DISPLAYING SINGLE PROJECT 
+////
+//gets single project data by props from the main APP
+
 
     window.scrollTo(0, 0);
 
-
-    
 
     //// //// ////
     ////  PREPARE SINGLE PROJECT CONTENT 
@@ -57,6 +60,13 @@ const singleProject = (props) => {
             //Posts navigation
             let prevPost = postIndex === 0 ? props.posts.length - 1 : postIndex - 1; 
             let nextPost = postIndex === props.posts.length - 1 ? 0 : postIndex + 1; 
+            
+
+
+            //// //// ////
+            ////  FINAL JSX 
+            ////
+            
             
             return (
                 <>
