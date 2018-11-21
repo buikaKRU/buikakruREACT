@@ -2,14 +2,19 @@
 
 .projectImage{
     max-width: 100%;
+    *{
+        
+    }
 
     .imageContainer{
         max-width: 100%;
         height: 0;
         overflow: hidden;
         margin-bottom: $imgBottomM;
+        position: relative;
         
         img{
+            @include animate;
             width: 100%;
         }
     }

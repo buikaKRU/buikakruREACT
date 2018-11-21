@@ -1,6 +1,6 @@
 import React from 'react';
 import './SingleProject.scss';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Redirect} from 'react-router-dom';
 
 import SingleProjectImage from '../../containers/SingleProjectImage/SingleProjectImage';
 
@@ -24,6 +24,15 @@ const singleProject = (props) => {
             const postIndex = props.posts.findIndex(element => {
                 return element.titleID === props.match.params.id
             });
+
+
+            //// //// ////
+            ////  wrong URL REDIRECTION
+            ////
+            
+            if (postIndex === -1){
+                return <Redirect to="/"/>
+            }
 
         
             const post = props.posts[postIndex];
