@@ -1,11 +1,8 @@
 
-buikaKRU's website - react edition
+[buikaKRU](http://buikakru.com) website - REACT edition
 
 - Project bootstrapped with create react app
-- Modules:
---- Node Sass & sass loader
---- Axios
---- React router dom
+- Modules: Node Sass & sass loader, Axios, React Router
 - REST API (backend comes from Wordpress)
 
 
