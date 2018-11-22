@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
-import axios from './gitIgnore/axiosGet';
+import axios from './axiosGet';
 import { Route, Switch } from 'react-router-dom';
 
 
@@ -42,9 +42,6 @@ class App extends Component {
     
     axios.get('')
       .then( response => {
-        console.log('response = ', response.data);
-        console.log(this.prepareData(response.data)) 
-
         this.setState({
           posts: this.prepareData(response.data)
         })
